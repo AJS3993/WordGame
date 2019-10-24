@@ -11,6 +11,7 @@ let secretWord, guessWord, usedLetters, wrongLetters;
 
 /*----- cached element references -----*/
 const guessWordEl = document.getElementById('word');
+const gallowsEl = document.getElementById('gallows');
 const messageEl = document.querySelector('h2');
 const letterBtns = document.querySelectorAll('#letters button');
 
@@ -34,11 +35,12 @@ function handleLetterClick(evt) {
     // correct guess
     let newGuessWord = '';
     for (let i = 0; i < secretWord.length; i++) {
-      if (secretWord.charAt(i) === letter) {
-        newGuessWord += letter;
-      } else {
-        newGuessWord += guessWord.charAt(i);
-      }
+      // if (secretWord.charAt(i) === letter) {
+      //   newGuessWord += letter;
+      // } else {
+      //   newGuessWord += guessWord.charAt(i);
+      // }
+      newGuessWord += (secretWord.charAt(i) === letter) ? letter : guessWord.charAt(i);
     }
     guessWord = newGuessWord;
   } else {
@@ -56,9 +58,8 @@ function render() {
   } else {
     messageEl.textContent = "Good Luck!";
   }
-
   // display gallows
-
+  gallowsEl.style.backgroundPositionX = `${-75 * wrongLetters.length}px`;
   // display guessWord
   guessWordEl.textContent = guessWord;
   // update letters

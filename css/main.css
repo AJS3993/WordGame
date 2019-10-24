@@ -4,6 +4,7 @@
 
 :root {
   --accent-dark: #BB4C3A;
+  --accent-light: #76bb76;
 }
 
 body {
@@ -46,6 +47,8 @@ h2 {
   color: grey;
   border-radius: .2rem;
   text-align: center;
+  outline: none;
+  cursor: pointer;
 }
 
 #letters {
@@ -59,4 +62,14 @@ h2 {
   font-size: 3rem;
   letter-spacing: 1rem;
   color: grey;
+}
+
+button.wrong {
+  background-color: var(--accent-dark);
+  cursor: not-allowed;
+}
+
+button.correct {
+  background-color: var(--accent-light);
+  cursor: not-allowed;
 }

@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --accent-dark: #BB4C3A;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  width: 100%;
+  font-size: 2rem;
+  background-color: var(--accent-dark);
+  padding: .5rem;
+  color: white;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  color: grey;
+  text-align: center;
+  margin: 4rem 0;
+}
+
+#gallows {
+  width: 75px;
+  height: 200px;
+  background-image: url(../imgs/hangman.png);
+}

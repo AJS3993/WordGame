@@ -38,12 +38,21 @@ h2 {
 
 #letters button {
   font-size: 1rem;
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 1px solid grey;
+  font-weight: bold;
+  width: 45px;
+  padding: .7rem;
+  margin: .5rem;
+  border: 2px solid grey;
   color: grey;
   border-radius: .2rem;
   text-align: center;
+}
+
+#letters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 4rem;
 }
 
 #word {

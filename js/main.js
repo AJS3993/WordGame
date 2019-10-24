@@ -14,10 +14,12 @@ const guessWordEl = document.getElementById('word');
 const gallowsEl = document.getElementById('gallows');
 const messageEl = document.querySelector('h2');
 const letterBtns = document.querySelectorAll('#letters button');
+const replayBtn = document.getElementById('replay');
 
 /*----- event listeners -----*/
 document.getElementById('letters')
   .addEventListener('click', handleLetterClick);
+replayBtn.addEventListener('click', init);
 
 /*----- functions -----*/
 init();
@@ -50,14 +52,7 @@ function handleLetterClick(evt) {
 }
 
 function render() {
-  // display message
-  if (secretWord === guessWord) {
-    messageEl.textContent = 'Congrats! You guessed the word!';
-  } else if (wrongLetters.length === LOSE_WRONG_COUNT) {
-    messageEl.textContent = "Sorry, you've been hung!";
-  } else {
-    messageEl.textContent = "Good Luck!";
-  }
+  renderMessage();
   // display gallows
   gallowsEl.style.backgroundPositionX = `${-75 * wrongLetters.length}px`;
   // display guessWord
@@ -73,6 +68,21 @@ function render() {
       btn.className = '';
     }
   });
+  replayBtn.style.visibility = isGameOver() ? 'visible' : 'hidden';
+}
+
+function renderMessage() {
+  if (secretWord === guessWord) {
+    messageEl.textContent = 'Congrats! You guessed the word!';
+  } else if (wrongLetters.length === LOSE_WRONG_COUNT) {
+    messageEl.textContent = "Sorry, you've been hung!";
+  } else {
+    messageEl.textContent = "Good Luck!";
+  }
+}
+
+function isGameOver() {
+  return (secretWord === guessWord) || (wrongLetters.length === LOSE_WRONG_COUNT);
 }
 
 function init() {

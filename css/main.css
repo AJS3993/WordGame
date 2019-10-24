@@ -73,3 +73,20 @@ button.correct {
   background-color: var(--accent-light);
   cursor: not-allowed;
 }
+
+#replay {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: .7rem;
+  margin-top: 2rem;
+  border: 2px solid grey;
+  color: grey;
+  border-radius: .2rem;
+  outline: none;
+  cursor: pointer;
+}
+
+#replay:hover {
+  background-color: grey;
+  color: white;
+}
